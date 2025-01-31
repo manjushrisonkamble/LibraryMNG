@@ -1,0 +1,57 @@
+﻿
+@model IEnumerable<Book>
+
+
+
+
+<br>
+<br>
+
+<p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Employee Table</p>
+
+<br>
+<br>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Genre</th>
+            <th scope="col">PublishDate</th>
+            <th scope="col">Status</th>
+            
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var book in Model)
+            {
+
+                <tr>
+                    
+                    <td scope="row">@book.BookTitle</td>
+                    <td>@book.Author</td>
+                    <td>@book.Genre</td>
+                    <td>@book.PublishDate</td>
+                    <td>@book.Status</td>
+                    
+                    <td><a href="@Url.Action("EditBook", "Book", new { id = book.BookId})">Update</a></td>
+                    <td><a href="@Url.Action("RemoveBook", "Book", new { id = book.BookId})">Delete</a></td>
+
+                </tr>
+
+
+
+            }
+        }
+    </tbody>
+
+
+</table>
+
+<br>
+<br>
+<a class="nav-link active" aria-current="page" href="@Url.Action("AddNewBook", "Book")"><button type="submit" class="btn btn-primary" style="padding-left: 2.5rem; padding-right: 2.5rem;">ADD Book</button></a>
