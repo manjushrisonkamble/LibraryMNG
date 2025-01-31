@@ -1,0 +1,21 @@
+# User-specific files
+.vs
+.vscode
+.idea
+
+# ASP.NET Core
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Build Results
+D:\BuildResults/
